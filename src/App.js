@@ -9,15 +9,15 @@ import { PortfolioContext } from './context/context';
 function App() {
   const [portfolio, setPortfolio] = useState([]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     async function getData() {
       const resp = await axios.get("../creaciones.json");
       console.log("LMAO", resp);
-      setContext(resp);
+      setPortfolio(resp);
     }
     
     getData();
-  }, []);*/
+  }, []);
 
   const añadirAFavs = (item) => {
     //añadir a localstorage
