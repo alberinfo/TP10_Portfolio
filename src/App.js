@@ -46,7 +46,7 @@ function App() {
           <Route path="/favs" element={<Favs />} />
         </Routes>
       </PortfolioContext.Provider>
-      <Footer></Footer>
+      <Footer style={{paddingBottom: "20px"}}></Footer>
 
     </BrowserRouter>
   );
