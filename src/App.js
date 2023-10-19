@@ -5,14 +5,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PortfolioContext } from './context/context';
+import Topbar from './Components/Topbar';
+import Creaciones from './Components/Creaciones';
+import Home from './Components/Home';
+import Favs from './Components/Favs';
+import AboutMe from './Components/AboutMe';
+import Footer from './Components/Footer';
 
 function App() {
   const [portfolio, setPortfolio] = useState([]);
 
   useEffect(() => {
     async function getData() {
-      const resp = await axios.get("../creaciones.json");
-      console.log("LMAO", resp);
+      const resp = await axios.get("creaciones.json");
       setPortfolio(resp);
     }
     
