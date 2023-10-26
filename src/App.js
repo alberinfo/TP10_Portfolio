@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Navbar } from 'react-bootstrap';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PortfolioContext } from './context/context';
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     async function getData() {
       const resp = await axios.get("creaciones.json");
-      setPortfolio(resp);
+      setPortfolio(resp.data);
     }
     
     getData();
@@ -34,6 +34,8 @@ function App() {
     setPortfolio(portfolio.map(obra => obra.nombre === item.nombre ? {...obra, favorito: false} : obra));
   }
 
+  if(portfolio.length === 0) return (<></>);
+
   return (
     <BrowserRouter>
 
@@ -44,6 +46,7 @@ function App() {
           <Route path="/sobremi" element={<AboutMe />} />
           <Route path="/creaciones" element={<Creaciones />} />
           <Route path="/favs" element={<Favs />} />
+          <Route path="*" element={<Navigate to="/home" replace/>}/>
         </Routes>
       </PortfolioContext.Provider>
       <Footer style={{paddingBottom: "20px"}}></Footer>
