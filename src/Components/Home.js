@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { PortfolioContext } from "../context/context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from '@mui/material';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function Home() {
     const context = useContext(PortfolioContext);
 
-    const portfolio = context;
+    const { portfolio } = context;
 
     const irAObra = (obra) => {
         //navegar
@@ -20,9 +22,9 @@ function Home() {
                         <Col key={idx}>
                             <Card onClick={() => irAObra(element)} style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={element.foto} />
-                                <Card.Body>
+                                <Card.Body style={{display: "flex", flexDirection: "row"}}>
                                     <Card.Title>{element.nombre}</Card.Title>
-                                    <FontAwesomeIcon icon="fa-thin fa-heart" />
+                                    {element.favorito ? <FavoriteIcon color="error" onClick={(e) => context.eliminarDeFavs(element)} /> : <FavoriteBorderIcon onClick={(e) => context.añadirAFavs(element)} />}
                                 </Card.Body>
                             </Card>
                         </Col>

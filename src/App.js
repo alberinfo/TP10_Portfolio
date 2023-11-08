@@ -17,6 +17,12 @@ function App() {
 
   useEffect(() => {
     async function getData() {
+      let creaciones = JSON.parse(localStorage.getItem("creaciones"));
+      if(creaciones !== null) {
+        setPortfolio(creaciones);
+        return;
+      }
+
       const resp = await axios.get("creaciones.json");
       setPortfolio(resp.data);
     }
@@ -24,13 +30,15 @@ function App() {
     getData();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("creaciones", JSON.stringify(portfolio));
+  }, [portfolio])
+
   const añadirAFavs = (item) => {
-    //añadir a localstorage
     setPortfolio(portfolio.map(obra => obra.nombre === item.nombre ? {...obra, favorito: true} : obra));
   }
 
   const eliminarDeFavs = (item) => {
-    //eliminar de localStorage
     setPortfolio(portfolio.map(obra => obra.nombre === item.nombre ? {...obra, favorito: false} : obra));
   }
 
@@ -40,7 +48,7 @@ function App() {
     <BrowserRouter>
 
       <Topbar></Topbar>
-      <PortfolioContext.Provider value={portfolio}>
+      <PortfolioContext.Provider value={{portfolio, añadirAFavs, eliminarDeFavs}}>
         <Routes>
           <Route path="/home" element={<Home />} />
           <Route path="/sobremi" element={<AboutMe />} />
