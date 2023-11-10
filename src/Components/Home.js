@@ -2,16 +2,20 @@ import { useContext } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { PortfolioContext } from "../context/context";
 import { Icon } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 function Home() {
+    const navigation = useNavigate();
+
     const context = useContext(PortfolioContext);
 
     const { portfolio } = context;
 
     const irAObra = (obra) => {
-        //navegar
+        console.log("JOEMAMA", obra);
+        navigation("/creaciones", { state: {obra: obra}});
     }
 
     return (

@@ -19,8 +19,10 @@ function App() {
     async function getData() {
       let creaciones = JSON.parse(localStorage.getItem("creaciones"));
       if(creaciones !== null) {
-        setPortfolio(creaciones);
-        return;
+        if(creaciones.length !== 0) {
+          setPortfolio(creaciones);
+          return;
+        }
       }
 
       const resp = await axios.get("creaciones.json");
