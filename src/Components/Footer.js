@@ -8,27 +8,6 @@ function Footer() {
                 <Container className="me-5 d-none d-lg-block">
                 <span>Get connected with us on social networks:</span>
                 </Container>
-
-                <Container>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-google"></i>
-                    </a>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" className="me-4 link-secondary">
-                        <i className="fab fa-github"></i>
-                    </a>
-                </Container>
             </section>
 
             <section className="">
@@ -38,10 +17,6 @@ function Footer() {
                     <h6 className="text-uppercase fw-bold mb-4">
                         <i className="fas fa-gem me-3 text-secondary"></i>Company name
                     </h6>
-                    <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
-                    </p>
                     </Container>
 
                     <Container className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -49,33 +24,7 @@ function Footer() {
                         Products
                     </h6>
                     <p>
-                        <a href="#!" className="text-reset">Angular</a>
-                    </p>
-                    <p>
                         <a href="#!" className="text-reset">React</a>
-                    </p>
-                    <p>
-                        <a href="#!" className="text-reset">Vue</a>
-                    </p>
-                    <p>
-                        <a href="#!" className="text-reset">Laravel</a>
-                    </p>
-                    </Container>
-                    <Container className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 className="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" className="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" className="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" className="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" className="text-reset">Help</a>
                     </p>
                     </Container>
 

@@ -5,7 +5,7 @@
         "favorito": true,
         "significado": "joemama",
         "precio": 50000,
-        "foto": "foto.png"
+        "foto": "https://i.pinimg.com/236x/f6/aa/ed/f6aaed6ab5d33cffba26c588745b673f.jpg"
     },
     {
         "nombre": "Labatata",
@@ -13,6 +13,6 @@
         "favorito": false,
         "significado": "pepe",
         "precio": 500,
-        "foto": "foto.png"
+        "foto": "https://i.pinimg.com/236x/f6/aa/ed/f6aaed6ab5d33cffba26c588745b673f.jpg"
     }
 ]
