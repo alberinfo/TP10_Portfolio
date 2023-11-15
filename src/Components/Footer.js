@@ -1,7 +1,12 @@
 import { Container } from "react-bootstrap";
-import { a } from "react-router-bootstrap";
 
 function Footer() {
+    const navigate = useNavigation()
+
+    const handleContacto = () => {
+
+    }
+
     return (
         <footer style={{position:"absolute", left:0, bottom:0, right:0}} className="text-center text-lg-start bg-white text-muted">
             <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -28,16 +33,10 @@ function Footer() {
                     </p>
                     </Container>
 
-                    <Container className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <Container className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" onClick={() => handleContacto()}>
 
-                    <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                    <p><i className="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i className="fas fa-envelope me-3 text-secondary"></i>
-                        info@example.com
-                    </p>
-                    <p><i className="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
-                    <p><i className="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                    <h6 className="text-uppercase fw-bold mb-4">Sobre nosotros</h6>
+ 
                     </Container>
 
                 </Container>
